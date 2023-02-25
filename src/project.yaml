@@ -1,4 +1,4 @@
-image: klakegg/hugo
+image: pixxelfragger/devcontainer-hugo
 version: 0.107.0
 
 platforms:
