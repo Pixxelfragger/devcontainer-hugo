@@ -5,11 +5,4 @@ RUN apk --no-cache add asciidoctor \
  && find /tmp -mindepth 1 -maxdepth 1 | xargs rm -rf
 
 
-
-IMPORT ../_imports/ci.df
-
-IMPORT ../_imports/onbuild.df
-
-
-
 FROM main

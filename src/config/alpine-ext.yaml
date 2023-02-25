@@ -16,21 +16,6 @@ images:
     platforms:
       - linux/amd64
 
-  # Alpine + Hugo extended + CI
-  ext-alpine-ci:
-    target: ext-alpine--ci
-    alias:
-      - $(VERSION)-ext-alpine-ci
-    platforms:
-      - linux/amd64
-
-  # Alpine + Hugo extended + Onbuild
-  ext-alpine-onbuild:
-    target: ext-alpine--onbuild
-    alias:
-      - $(VERSION)-ext-alpine-onbuild
-    platforms:
-      - linux/amd64
 
   # Alpine + Hugo extended + Asciidoctor
   ext-asciidoctor:
@@ -47,22 +32,6 @@ images:
     platforms:
       - linux/amd64
 
-  # Alpine + Hugo extended + Asciidoctor + CI
-  ext-asciidoctor-ci:
-    target: ext-asciidoctor--ci
-    alias:
-      - $(VERSION)-ext-asciidoctor-ci
-    platforms:
-      - linux/amd64
-
-  # Alpine + Hugo extended + Asciidoctor + Onbuild
-  ext-asciidoctor-onbuild:
-    target: ext-asciidoctor--onbuild
-    alias:
-      - $(VERSION)-ext-asciidoctor-onbuild
-    platforms:
-      - linux/amd64
-
   # Alpine + Hugo extended + Pandoc
   ext-pandoc:
     target: ext-pandoc
@@ -76,22 +45,6 @@ images:
       - yarn
       - postcss
       - rst2html
-    platforms:
-      - linux/amd64
-
-  # Alpine + Hugo extended + Pandoc + CI
-  ext-pandoc-ci:
-    target: ext-pandoc--ci
-    alias:
-      - $(VERSION)-ext-pandoc-ci
-    platforms:
-      - linux/amd64
-
-  # Alpine + Hugo extended + Pandoc + Onbuild
-  ext-pandoc-onbuild:
-    target: ext-pandoc--onbuild
-    alias:
-      - $(VERSION)-ext-pandoc-onbuild
     platforms:
       - linux/amd64
 

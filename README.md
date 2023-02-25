@@ -1,133 +1,32 @@
-# Hugo
+# VS Code devcontainer for Hugo
 
-[![Docker Pulls](https://img.shields.io/docker/pulls/klakegg/hugo.svg)](https://store.docker.com/community/images/klakegg/hugo)
+This is a [VS Code devcontainer](https://code.visualstudio.com/docs/remote/containers) for [Hugo](https://gohugo.io/).
+
+The image is based on the [klakegg/hugo](https://hub.docker.com/r/klakegg/hugo) image. Which is described as:
+
+<!-- [![Docker Pulls](https://img.shields.io/docker/pulls/klakegg/hugo.svg)](https://store.docker.com/community/images/klakegg/hugo) -->
 
 Truly minimal Docker images for [Hugo](http://gohugo.io/) with batteries included.
 These images sets `bind` when started as server, otherwise no magic.
 
+## What is changed?
 
-## Latest tags
+So as the klakegg images are a great build for CI/CD, but they are not really suited for development usage as devcontainers.
+So this image is based on the klakegg image, but with some changes:
 
-Default minimal image based upon [Busybox](https://hub.docker.com/r/_/busybox/):
-* Aliases: `latest`, `busybox`, `busybox-ci`, `ci`, `busybox-onbuild`, `onbuild`
-* Hugo 0.107.0: `0.107.0-busybox`, `0.107.0`, `0.107.0-busybox-ci`, `0.107.0-ci`, `0.107.0-busybox-onbuild`, `0.107.0-onbuild`
+- there is no busiybox image
+- there is only the `<version>-<os>-extended` and `<version>-<os>` tags
+- the image is based on the alpine, debian and ubuntu devcontainer base images.
 
-Minimal image based upon [Alpine](https://hub.docker.com/r/_/alpine/):
-* Aliases: `alpine`, `alpine-ci`, `alpine-onbuild`, `ext-alpine`, `ext-alpine-ci`, `ext-alpine-onbuild`
-* Hugo 0.107.0: `0.107.0-alpine`, `0.107.0-alpine-ci`, `0.107.0-alpine-onbuild`, `0.107.0-ext-alpine`, `0.107.0-ext-alpine-ci`, `0.107.0-ext-alpine-onbuild`
-
-Minimal image based upon [Alpine](https://hub.docker.com/r/_/alpine/) with [Asciidoctor](http://asciidoctor.org/) installed:
-* Aliases: `asciidoctor`, `asciidoctor-ci`, `asciidoctor-onbuild`, `ext-asciidoctor`, `ext-asciidoctor-ci`, `ext-asciidoctor-onbuild`
-* Hugo 0.107.0: `0.107.0-asciidoctor`, `0.107.0-asciidoctor-onbuild`, `0.107.0-asciidoctor-ci`, `0.107.0-ext-asciidoctor`, `0.107.0-ext-asciidoctor-ci`, `0.107.0-ext-asciidoctor-onbuild`
-
-Minimal image based upon [Alpine](https://hub.docker.com/r/_/alpine/) with [Pandoc](https://pandoc.org/) installed:
-* Aliases: `pandoc`, `pandoc-ci`, `pandoc-onbuild`, `ext-pandoc`, `ext-pandoc-ci`, `ext-pandoc-onbuild`
-* Hugo 0.107.0: `0.107.0-pandoc`, `0.107.0-pandoc-ci`, `0.107.0-pandoc-onbuild`, `0.107.0-ext-pandoc`, `0.107.0-ext-pandoc-ci`, `0.107.0-ext-pandoc-onbuild`
-
-Image based upon [Debian](https://hub.docker.com/r/_/debian/):
-* Aliases: `debian`, `debian-ci`, `debian-onbuild`, `ext`, `latest-ext`, `ext-debian`, `ext-debian-ci`, `ext-ci`, `ext-debian-onbuild`, `ext-onbuild`
-* Hugo 0.107.0: `0.107.0-debian`, `0.107.0-debian-ci`, `0.107.0-debian-onbuild`, `0.107.0-ext`, `0.107.0-ext-debian`, `0.107.0-ext-debian-ci`, `0.107.0-ext-ci`,`0.107.0-ext-debian-onbuild`, `0.107.0-ext-onbuild`
-
-Image based upon [Ubuntu](https://hub.docker.com/r/_/ubuntu/):
-* Aliases: `ubuntu`, `ubuntu-ci`, `ubuntu-onbuild`, `ext-ubuntu`, `ext-ubuntu-ci`, `ext-ubuntu-onbuild`
-* Hugo 0.107.0: `0.107.0-ubuntu`, `0.107.0-ubuntu-ci`, `0.107.0-ubuntu-onbuild`, `0.107.0-ext-ubuntu`, `0.107.0-ext-ubuntu-ci`, `0.107.0-ext-ubuntu-onbuild`
 
 *Looking for older tags? Please see the [complete list of tags](https://github.com/klakegg/docker-hugo/blob/master/doc/tags.md).*
 
 
 ## Using image
 
-This image does not try to do any fancy.
-Users may use Hugo [just as they are used to](https://gohugo.io/documentation/).
+TODO: add some examples of how to use the image
 
 
-### Command line
-
-Normal build:
-
-```shell
-docker run --rm -it \
-  -v $(pwd):/src \
-  klakegg/hugo:0.107.0
-```
-
-Run server:
-
-```shell
-docker run --rm -it \
-  -v $(pwd):/src \
-  -p 1313:1313 \
-  klakegg/hugo:0.107.0 \
-  server
-```
-
-
-### docker-compose
-
-Normal build:
-
-```yaml
-  build:
-    image: klakegg/hugo:0.107.0
-    volumes:
-      - ".:/src"
-```
-
-Run server:
-
-```yaml
-  server:
-    image: klakegg/hugo:0.107.0
-    command: server
-    volumes:
-      - ".:/src"
-    ports:
-      - "1313:1313"
-```
-
-
-### Github Actions
-
-All versions and variants published using this repository may be used in any combination.
-
-Simple configuration for e.g. `.github/workflows/hugo.yml`:
-
-```yaml
-name: Hugo
-
-on: [push]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-
-    steps:
-    - uses: actions/checkout@v1
-
-    - name: hugo
-      uses: klakegg/actions-hugo@1.0.0
-```
-
-Find out more in [klakegg/actions-hugo](https://github.com/klakegg/actions-hugo).
-
-
-### Travis CI
-
-Simple configuration for `.travis.yml`:
-
-```yaml
-language: bash
-
-services:
-- docker
-
-script:
-- docker run --rm -i \
-    -v $(pwd):/src \
-    klakegg/hugo:0.107.0
-```
-
-The `bash` environment is used for faster loading before Travis is ready to trigger Docker.
 
 
 ## Hugo shell
@@ -164,36 +63,6 @@ Table of Hugo extention features and the version when images first support the f
 | rst2html      | 0.81.0 | 0.81.0 | 0.81.0 |
 
 Users of [google/docsy](https://github.com/google/docsy) may use the extended images as of version 0.57.2 to build their site.
-
-
-## Using ONBUILD image
-
-The onbuild images adds content of the folder of your Dockerfile into `/src` and builds to the `/target` (prior to `0.68.0`: `/onbuild`) folder.
-
-Example Dockerfile for your project where the site is made into an nginx image (Docker 17.05-ce or newer):
-
-```Dockerfile
-FROM klakegg/hugo:0.107.0-onbuild AS hugo
-
-FROM nginx
-COPY --from=hugo /target /usr/share/nginx/html
-```
-
-Available arguments for `docker build`:
-* HUGO_CMD - Commands passed to Hugo during build. Default *empty*
-* HUGO_DESTINATION_ARG - Location of output folder. Default: `/target`
-* HUGO_ENV_ARG - Selecting environment ("DEV"/"production"). Default: `DEV`
-* HUGO_DIR - Selecting Hugo root directory. Default: `/src`
-
-
-## Using CI image (0.77.0 or newer)
-
-The `ci` images are prepared for use in configuration for continuous integration/deployment.
-
-Difference between normal images and `ci` images:
-
-* Environment variable `HUGO_ENV`: `production`
-* Entrypoint is empty
 
 
 ## Using Pandoc

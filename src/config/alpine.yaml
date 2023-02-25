@@ -7,32 +7,11 @@ images:
     edge: true
     platforms:
       - linux/amd64
-      - linux/arm/v7
       - linux/arm64
     alias:
       - $(VERSION)-alpine
     tests:
       - hugo
-
-  # Alpine + Hugo + CI
-  alpine-ci:
-    target: alpine--ci
-    platforms:
-      - linux/amd64
-      - linux/arm/v7
-      - linux/arm64
-    alias:
-      - $(VERSION)-alpine-ci
-
-  # Alpine + Hugo + Onbuild
-  alpine-onbuild:
-    target: alpine--onbuild
-    platforms:
-      - linux/amd64
-      - linux/arm/v7
-      - linux/arm64
-    alias:
-      - $(VERSION)-alpine-onbuild
 
   # Alpine + Hugo + Asciidoctor
   asciidoctor:
@@ -40,33 +19,12 @@ images:
     edge: true
     platforms:
       - linux/amd64
-      - linux/arm/v7
       - linux/arm64
     alias:
       - "$(VERSION)-asciidoctor"
     tests:
       - hugo
       - asciidoctor
-
-  # Alpine + Hugo + Asciidoctor + CI
-  asciidoctor-ci:
-    target: asciidoctor--ci
-    platforms:
-      - linux/amd64
-      - linux/arm/v7
-      - linux/arm64
-    alias:
-      - "$(VERSION)-asciidoctor-ci"
-
-  # Alpine + Hugo + Asciidoctor + Onbuild
-  asciidoctor-onbuild:
-    target: asciidoctor--onbuild
-    platforms:
-      - linux/amd64
-      - linux/arm/v7
-      - linux/arm64
-    alias:
-      - "$(VERSION)-asciidoctor-onbuild"
 
   # Alpine + Hugo + Pandoc
   pandoc:
@@ -80,24 +38,6 @@ images:
     tests:
       - hugo
       - pandoc
-
-  # Alpine + Hugo + Pandoc + CI
-  pandoc-ci:
-    target: pandoc--ci
-    platforms:
-      - linux/amd64
-      - linux/arm64
-    alias:
-      - $(VERSION)-pandoc-ci
-
-  # Alpine + Hugo + Pandoc + Onbuild
-  pandoc-onbuild:
-    target: pandoc--onbuild
-    platforms:
-      - linux/amd64
-      - linux/arm64
-    alias:
-      - $(VERSION)-pandoc-onbuild
 
 tests:
   hugo:

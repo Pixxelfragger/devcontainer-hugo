@@ -20,23 +20,6 @@ images:
       - linux/amd64
       - linux/arm64
 
-  # Ubuntu + Hugo extended + CI
-  ext-ubuntu-ci:
-    target: ext-ubuntu--ci
-    alias:
-      - $(VERSION)-ext-ubuntu-ci
-    platforms:
-      - linux/amd64
-      - linux/arm64
-
-  # Ubuntu + Hugo extended + Onbuild
-  ext-ubuntu-onbuild:
-    target: ext-ubuntu--onbuild
-    alias:
-      - $(VERSION)-ext-ubuntu-onbuild
-    platforms:
-      - linux/amd64
-      - linux/arm64
 
 tests:
   hugo:

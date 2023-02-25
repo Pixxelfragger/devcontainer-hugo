@@ -18,8 +18,6 @@ FROM scratch AS extended
 COPY --from=fetcher-extended /files /
 
 
-
-
 # Standard edition
 FROM --platform=$BUILDPLATFORM base--image--debian AS fetcher-standard
 
@@ -32,7 +30,6 @@ RUN apt update && apt install -y wget
 #COPY --from=base--files--scripts /hugo-standard.sh hugo.sh
 ADD _script/hugo-standard.sh hugo.sh
 RUN sh hugo.sh
-
 
 
 FROM scratch AS standard
