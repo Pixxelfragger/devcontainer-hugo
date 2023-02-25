@@ -42,8 +42,8 @@ RUN true \
  && apt autoremove -y \
  && rm -rf /var/lib/apt/lists/* \
  && find /tmp -mindepth 1 -maxdepth 1 | xargs rm -rf \
- && mkdir -p /src /target \
- && chmod a+w /src /target \
+ && mkdir -p /workspace /target \
+ && chmod a+w /workspace /target \
  #
  # add /src to safe.directory
  && git config --global --add safe.directory /src
