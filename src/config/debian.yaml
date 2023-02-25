@@ -15,5 +15,6 @@ images:
 
 tests:
   hugo:
+    entrypoint: hugo
     command: version
     expected: hugo
