@@ -4,8 +4,8 @@ IMPORT ../_imports/version_arg
 
 ENV HUGO_BIND="0.0.0.0" \
     HUGO_DESTINATION="public" \
-    HUGO_ENV="DEV" \
-    HOME="/tmp"
+    HUGO_ENV="DEV" 
+    #HOME="/tmp"
 
 RUN apt update \
  && DEBIAN_FRONTEND=noninteractive apt install -y wget bash-completion tzdata make ca-certificates \
@@ -18,6 +18,6 @@ COPY --from=base--files--debian / /
 
 EXPOSE 1313
 
-WORKDIR /src
+WORKDIR /workspaces/hugo_docs
 
-ENTRYPOINT ["hugo"]
+#ENTRYPOINT ["zsh"]
