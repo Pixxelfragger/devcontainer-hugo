@@ -24,7 +24,7 @@ RUN apk --no-cache add busybox-suid bash bash-completion tzdata make \
 
 EXPOSE 1313
 
-WORKDIR /workspaces/hugo_docs
+WORKDIR /workspaces
 
 #ENTRYPOINT ["zsh"]
 

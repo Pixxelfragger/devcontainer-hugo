@@ -49,7 +49,7 @@ RUN true \
 
 EXPOSE 1313
 
-WORKDIR /workspaces/hugo_docs
+WORKDIR /workspaces
 
 #ENTRYPOINT ["zsh"]
 
