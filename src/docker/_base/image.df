@@ -1,5 +1,5 @@
-FROM mcr.microsoft.com/vscode/devcontainers/base:alpine-3.16 AS alpine
+FROM mcr.microsoft.com/vscode/devcontainers/base:alpine AS alpine
 
-FROM mcr.microsoft.com/vscode/devcontainers/base:debian-11 AS debian
+FROM mcr.microsoft.com/vscode/devcontainers/base:debian AS debian
 
-FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu-22.04 AS ubuntu
+FROM mcr.microsoft.com/vscode/devcontainers/base:ubuntu AS ubuntu

@@ -17,7 +17,6 @@
 
 * Hugo: [`0.107.0`](https://github.com/klakegg/docker-hugo/releases/tag/0.107.0) => `NEXT`
 
-
 ## Docker images
 
 <details>

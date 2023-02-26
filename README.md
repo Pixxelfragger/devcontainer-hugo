@@ -4,7 +4,6 @@
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/pixxelfragger/devcontainer-hugo.svg)](https://store.docker.com/community/images/pixxelfragger/devcontainer-hugo)
 [![Docker Image Version (latest semver)](https://img.shields.io/docker/v/pixxelfragger/devcontainer-hugo?sort=semver)](https://hub.docker.com/r/pixxelfragger/devcontainer-hugo)
-<!-- [![Docker Image Size (tag)](https://img.shields.io/docker/image-size/pixxelfragger/devcontainer-hugo/alpine)](https://hub.docker.com/r/pixxelfragger/devcontainer-hugo) -->
 
 > WORK IN PROGRESS!
 > 
