@@ -44,7 +44,7 @@ So this image is based on the `klakegg/hugo` image, but with some changes:
 ## Using image
 
 > TODO: add some examples of how to use the image
-> partly done, but needs more examples: [devcontainer usage](https://github.com/pixxelfragger/devcontainer-hugo/blob/master/doc/example/decvontainer-usage.md).*
+> partly done, but needs more examples: [devcontainer usage](https://github.com/pixxelfragger/devcontainer-hugo/blob/master/doc/example/decvontainer-usage.md).
 
 ## Hugo extended edition
 

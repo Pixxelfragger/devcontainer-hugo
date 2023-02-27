@@ -45,8 +45,8 @@ RUN true \
  && mkdir -p /workspace /target \
  && chmod a+w /workspace /target \
  #
- # add /src to safe.directory
- && git config --global --add safe.directory /src
+ # add /workspace to safe.directory
+ && git config --global --add safe.directory /workspace
 
 COPY --from=base--golang / /
 
