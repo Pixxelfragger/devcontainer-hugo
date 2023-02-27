@@ -15,14 +15,14 @@
 
 ## :heartbeat: Updates
 
-* Hugo: [`0.107.0`](https://github.com/klakegg/docker-hugo/releases/tag/0.107.0) => `NEXT`
+* Hugo: [`0.107.0`](https://github.com/pixxelfragger/devcontainer-hugo/releases/tag/0.107.0) => `NEXT`
 
 ## Docker images
 
 <details>
 <summary>Click to see available images</summary>
 
-This release is available from Docker Hub as project `klakegg/hugo` with the following tags:
+This release is available from Docker Hub as project `pixxelfragger/devcontainer-hugo` with the following tags:
 
 | Alias tags                   | Version specific tags                      |
 | ---------------------------- | ------------------------------------------ |
